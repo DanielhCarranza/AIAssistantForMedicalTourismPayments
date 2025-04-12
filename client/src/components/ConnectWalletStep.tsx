@@ -3,7 +3,7 @@ import {
   CardContent
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { LockKeyhole, CreditCard, ShieldCheck, Coins, Lightbulb, Wallet } from "lucide-react";
+import { LockKeyhole, CreditCard, ShieldCheck, Coins, Lightbulb, Wallet, ArrowRight, Globe } from "lucide-react";
 
 interface ConnectWalletStepProps {
   connectWallet: (method: 'crypto' | 'traditional') => void;
@@ -17,92 +17,115 @@ const ConnectWalletStep = ({ connectWallet, onWalletConnected }: ConnectWalletSt
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Medical Tourism Payment Platform</h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">Pay for your medical procedures abroad with ease. Connect your wallet to get started.</p>
+    <div className="w-full">
+      {/* Apple-inspired Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 min-h-[560px] flex flex-col justify-center items-center mb-24 px-4">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1631815588090-d4bfec5b9882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] opacity-10 bg-cover bg-center"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <div className="animate-fade-in-down">
+            <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-500 leading-tight tracking-tight mb-4">
+              The Future of Medical <br className="hidden md:block" />Tourism Payments
+            </h1>
+            <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light">
+              Seamlessly pay for medical procedures abroad with cryptocurrency or traditional methods. Experience unmatched security, lower fees, and instant transfers.
+            </p>
+          </div>
+          
+          <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+            <Button 
+              onClick={() => handleConnect('crypto')}
+              className="group h-14 px-8 md:px-10 bg-indigo-600 hover:bg-indigo-700 rounded-full text-white font-medium text-lg transition-all"
+            >
+              <span>Connect Crypto Wallet</span>
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+            
+            <Button
+              variant="outline" 
+              onClick={() => handleConnect('traditional')}
+              className="h-14 px-8 md:px-10 rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm font-medium text-lg"
+            >
+              <Globe className="mr-2 h-5 w-5" />
+              <span>Traditional Payment</span>
+            </Button>
+          </div>
+          
+          <div className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-indigo-900/40 text-indigo-300 mb-3">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <p className="text-white text-sm md:text-base font-medium">Secure Blockchain Transactions</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-indigo-900/40 text-indigo-300 mb-3">
+                <Coins className="h-6 w-6" />
+              </div>
+              <p className="text-white text-sm md:text-base font-medium">Lower Cross-Border Fees</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-indigo-900/40 text-indigo-300 mb-3">
+                <Lightbulb className="h-6 w-6" />
+              </div>
+              <p className="text-white text-sm md:text-base font-medium">AI-Powered Recommendations</p>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <Card className="rounded-xl shadow-sm overflow-hidden p-8">
-        <CardContent className="p-0">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Connect Your Wallet</h2>
-              <p className="text-gray-600 mb-6">To begin making payments for your medical procedures, connect your cryptocurrency wallet or choose traditional payment.</p>
-              
-              <div className="space-y-4">
-                <Button 
-                  variant="default"
-                  className="w-full bg-accent hover:bg-accent/90 text-white"
-                  onClick={() => handleConnect('crypto')}
-                >
-                  <LockKeyhole className="mr-2 h-5 w-5" />
-                  Connect Crypto Wallet
-                </Button>
-                
-                <div className="relative">
-                  <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div className="w-full border-t border-gray-300"></div>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <span className="px-2 bg-white text-sm text-gray-500">or</span>
-                  </div>
-                </div>
-                
-                <Button 
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => handleConnect('traditional')}
-                >
-                  <CreditCard className="mr-2 h-5 w-5" />
-                  Use Traditional Payment
-                </Button>
+      {/* Features Section (kept and redesigned) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Reimagine Healthcare Payments</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Our platform brings together advanced technology and user-friendly design to make medical tourism payments effortless.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <Card className="rounded-2xl border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div className="h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
+            <CardContent className="p-6">
+              <div className="text-indigo-600 mb-4">
+                <ShieldCheck className="h-10 w-10" />
               </div>
-            </div>
-            
-            <div className="hidden md:block">
-              <img 
-                src="https://images.unsplash.com/photo-1631815588090-d4bfec5b9882?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Cryptocurrency payment illustration" 
-                className="rounded-lg h-full w-full object-cover" 
-              />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="p-6">
-          <div className="text-primary mb-3">
-            <ShieldCheck className="h-8 w-8" />
-          </div>
-          <h3 className="text-lg font-medium text-gray-800 mb-2">Secure Transactions</h3>
-          <p className="text-gray-600 text-sm">Blockchain technology ensures your payments are secure and tamper-proof.</p>
-        </Card>
-        
-        <Card className="p-6">
-          <div className="text-primary mb-3">
-            <Coins className="h-8 w-8" />
-          </div>
-          <h3 className="text-lg font-medium text-gray-800 mb-2">Multi-Currency</h3>
-          <p className="text-gray-600 text-sm">Pay in cryptocurrency or your local fiat currency with seamless conversion.</p>
-        </Card>
-        
-        <Card className="p-6">
-          <div className="text-primary mb-3">
-            <Lightbulb className="h-8 w-8" />
-          </div>
-          <h3 className="text-lg font-medium text-gray-800 mb-2">Smart Recommendations</h3>
-          <p className="text-gray-600 text-sm">AI-powered suggestions help you optimize for the best exchange rates and fees.</p>
-        </Card>
-        
-        <Card className="p-6">
-          <div className="text-primary mb-3">
-            <Wallet className="h-8 w-8" />
-          </div>
-          <h3 className="text-lg font-medium text-gray-800 mb-2">Low Fees</h3>
-          <p className="text-gray-600 text-sm">Competitive fees far lower than traditional cross-border payment methods.</p>
-        </Card>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Secure Transactions</h3>
+              <p className="text-gray-600">Blockchain technology ensures your payments are secure and tamper-proof, with immutable records.</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="rounded-2xl border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div className="h-2 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+            <CardContent className="p-6">
+              <div className="text-indigo-600 mb-4">
+                <Coins className="h-10 w-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Multi-Currency</h3>
+              <p className="text-gray-600">Pay in cryptocurrency or your local fiat currency with seamless conversion at optimal rates.</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="rounded-2xl border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div className="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+            <CardContent className="p-6">
+              <div className="text-indigo-600 mb-4">
+                <Lightbulb className="h-10 w-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Smart Recommendations</h3>
+              <p className="text-gray-600">AI-powered suggestions help you optimize for the best exchange rates and lowest transaction fees.</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="rounded-2xl border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div className="h-2 bg-gradient-to-r from-pink-500 to-red-500"></div>
+            <CardContent className="p-6">
+              <div className="text-indigo-600 mb-4">
+                <Wallet className="h-10 w-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Low Fees</h3>
+              <p className="text-gray-600">Competitive fees far lower than traditional cross-border payment methods, saving you money.</p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
