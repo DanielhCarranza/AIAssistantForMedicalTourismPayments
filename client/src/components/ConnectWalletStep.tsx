@@ -327,15 +327,67 @@ const ConnectWalletStep = ({ connectWallet, onWalletConnected }: ConnectWalletSt
         
         {/* Testimonial section */}
         <div className="mt-24 bg-gray-50 rounded-xl p-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl font-semibold text-gray-900 mb-8">Why Patients Choose MedTourPay</h3>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <p className="text-gray-700 italic mb-4">
-                "MedTourPay's AI found me a dental clinic in Mexico that saved me $8,000 compared to local options. The payment process was seamless, and I could focus on my treatment instead of worrying about money transfers."
-              </p>
-              <div className="font-medium text-primary">Jessica L., California</div>
-              <div className="text-sm text-gray-500">Dental Restoration</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-bold text-primary">JL</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 italic mb-4">
+                  "MedTourPay's AI found me a dental clinic in Mexico that saved me $8,000 compared to local options. The payment process was seamless, and I could focus on my treatment instead of worrying about money transfers."
+                </p>
+                <div className="font-medium text-primary">Jessica L., California</div>
+                <div className="text-sm text-gray-500">Dental Restoration</div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-bold text-primary">RK</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 italic mb-4">
+                  "After getting a $45,000 quote for knee surgery in the US, I found a top hospital in Thailand through MedTourPay for just $12,500. The AI assistant helped me compare options, and the crypto payment saved me on international fees."
+                </p>
+                <div className="font-medium text-primary">Robert K., New York</div>
+                <div className="text-sm text-gray-500">Knee Replacement Surgery</div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-bold text-primary">MJ</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 italic mb-4">
+                  "I was hesitant about medical tourism until MedTourPay showed me JCI-accredited hospitals in South Korea. Saved 65% on my hip replacement, and the platform handled everything from finding the hospital to paying with crypto."
+                </p>
+                <div className="font-medium text-primary">Michael J., Texas</div>
+                <div className="text-sm text-gray-500">Hip Replacement</div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-xl font-bold text-primary">SP</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 italic mb-4">
+                  "As someone without insurance, I thought I'd never afford LASIK. MedTourPay found me options in Colombia that were 70% cheaper than US prices, with the same equipment and trained surgeons. Cryptocurrency payment was fast and simple."
+                </p>
+                <div className="font-medium text-primary">Sarah P., Florida</div>
+                <div className="text-sm text-gray-500">LASIK Eye Surgery</div>
+              </div>
+            </div>
+            
+            <div className="mt-10">
+              <Button variant="outline" className="rounded-full">
+                Read More Success Stories
+              </Button>
             </div>
           </div>
         </div>
