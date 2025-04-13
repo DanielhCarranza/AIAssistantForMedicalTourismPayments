@@ -1,4 +1,4 @@
-import { Clock, Search, HeartPulse } from "lucide-react";
+import { HeartPulse } from "lucide-react";
 
 interface HeaderProps {
   walletConnected: boolean;
@@ -22,20 +22,7 @@ const Header = ({
             <span className="font-bold text-xl text-gray-800">MedTourPay</span>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-primary">How It Works</a>
-            <a href="#" className="text-gray-700 hover:text-primary">Find Procedures</a>
-            <a href="#" className="text-gray-700 hover:text-primary">About Us</a>
-          </div>
-          
           <div className="flex items-center">
-            {!showProviderDashboard && (
-              <button className="mr-3 px-3 py-2 text-sm rounded-full bg-gray-100 hover:bg-gray-200 flex items-center">
-                <Search className="h-4 w-4 mr-1 text-gray-500" />
-                <span className="text-gray-700">Find Procedure</span>
-              </button>
-            )}
-            
             <button 
               onClick={toggleProviderDashboard} 
               className="px-4 py-2 text-sm rounded-full border border-gray-300 hover:bg-gray-50">
